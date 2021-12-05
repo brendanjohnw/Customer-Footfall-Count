@@ -1,2 +1,2 @@
 # FootfallCount
-A Footfall Count Project.
+A Customer Footfall Count Project.
