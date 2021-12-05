@@ -78,55 +78,6 @@ for box in car_boxes:
     # Draw the box
     cv2.rectangle(newImage, (x1, y1), (x2, y2), (0, 255, 0), 1)
 
-    # if parked_car_boxes is None:
-    #     # This is the first frame of video - assume all the cars detected are in parking spaces.
-    #     # Save the location of each car as a parking space box and go to the next frame of video.
-    #     parked_car_boxes = get_car_boxes(r['rois'], r['class_ids'])
-    # else:
-    #     # We already know where the parking spaces are. Check if any are currently unoccupied.
-
-    #     # Get where cars are currently located in the frame
-    #     car_boxes = get_car_boxes(r['rois'], r['class_ids'])
-
-    #     # See how much those cars overlap with the known parking spaces
-    #     overlaps = mrcnn.utils.compute_overlaps(parked_car_boxes, car_boxes)
-
-    #     # Assume no spaces are free until we find one that is free
-    #     free_space = False
-
-    #     # # Loop through each known parking space box
-    #     # for parking_area, overlap_areas in zip(parked_car_boxes, overlaps):
-
-    #     #     # For this parking space, find the max amount it was covered by any
-    #     #     # car that was detected in our image (doesn't really matter which car)
-    #     #     max_IoU_overlap = np.max(overlap_areas)
-
-    #     #     # Get the top-left and bottom-right coordinates of the parking area
-    #     #     y1, x1, y2, x2 = parking_area
-
-    #     #     # Check if the parking space is occupied by seeing if any car overlaps
-    #     #     # it by more than 0.15 using IoU
-    #     #     if max_IoU_overlap < 0.15:
-    #     #         # Parking space not occupied! Draw a green box around it
-    #     #         cv2.rectangle(image, (x1, y1), (x2, y2), (0, 255, 0), 3)
-    #     #         # Flag that we have seen at least one open space
-    #     #         free_space = True
-    #     #     else:
-    #     #         # Parking space is still occupied - draw a red box around it
-    #     #         cv2.rectangle(image, (x1, y1), (x2, y2), (0, 0, 255), 1)
-
-    #     #     # Write the IoU measurement inside the box
-    #     #     font = cv2.FONT_HERSHEY_DUPLEX
-    #     #     cv2.putText(image, f"{max_IoU_overlap:0.2}", (x1 + 6, y2 - 6), font, 0.3, (255, 255, 255))
-
-    #     # # If at least one space was free, start counting frames
-    #     # # This is so we don't alert based on one frame of a spot being open.
-    #     # # This helps prevent the script triggered on one bad detection.
-    #     # if free_space:
-    #     #     free_space_frames += 1
-    #     # else:
-    #     #     # If no spots are free, reset the count
-    #     #     free_space_frames = 0
 
 cv2.imshow('People Detected', newImage)
 cv2.waitKey(0)
