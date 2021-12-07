@@ -17,14 +17,20 @@ shopping mall or retail store.
 Dashboard for mock data set (OpenCV):
 https://public.tableau.com/views/E1_16387797643930/CoordinatesbyFrame?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
 
-Visualizations created
+Dashboard for OpenCV data set:
+https://public.tableau.com/views/OpenCVData/CumulativeCountbySeconds?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
+
+Visualizations created:
+- Cumulative Count by Seconds
+
+Dashboard for Toronto Station Bikeshare Data (sample data):
+https://public.tableau.com/views/TorontoStationBikeshareData/HourlyTrend?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
+
+Visualizations created:
 - Hourly footfall trend (grouped by days of the week)
 - Daily footfall trend (grouped by week number, 1- 13 (Q1 of 2018))
 - Weekly footfall trend
 - Monthly footfall trend
-
-Dashboard for Toronto Station Bikeshare Data (sample data):
-https://public.tableau.com/views/TorontoStationBikeshareData/HourlyTrend?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
 
 ## Limitations
 
