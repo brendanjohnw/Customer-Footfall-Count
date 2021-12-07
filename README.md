@@ -17,8 +17,11 @@ https://public.tableau.com/views/E1_16387797643930/CoordinatesbyFrame?:language=
 ## Dependencies
 
 OpenCV:https://docs.opencv.org/4.x/d4/db1/tutorial_documentation.html
+
 Numpy: https://numpy.org/doc/stable/
+
 Matplotlib: https://matplotlib.org/stable/api/index
+
 YoloV4: https://github.com/pjreddie/darknet
 
 # References
