@@ -10,6 +10,10 @@ shopping mall or retail store.
 ## Data Visualization using Tableau (Kong Yuki)
 **Initial plan:** Use Tableau to visualize data set generated from OpenCV in a dashboard
 
+Problem encountered: Video is too short, little can be predicted based on raw coordinates of all people per frame.
+
+Alternative: Use Toronto Station Bikeshare Data (sample data) as an example on how to visualize footfall count data
+
 Dashboard for mock data set (OpenCV):
 https://public.tableau.com/views/E1_16387797643930/CoordinatesbyFrame?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
 
