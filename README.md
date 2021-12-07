@@ -53,5 +53,7 @@ YoloV4: https://github.com/pjreddie/darknet
 # References
 
 Toronto Station Bikeshare Data (sample data): https://www.kaggle.com/apexinsideapex/station-footfall-analysis/data
+
 PyImageSearch People tracker and counter: https://www.pyimagesearch.com/2018/08/13/opencv-people-counter/
+
 Non-Maxima suppression: https://learnopencv.com/non-maximum-suppression-theory-and-implementation-in-pytorch/
