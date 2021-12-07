@@ -13,7 +13,7 @@ shopping mall or retail store.
 Dashboard for mock data set (OpenCV):
 https://public.tableau.com/views/E1_16387797643930/CoordinatesbyFrame?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
 
-Dashboard for sample data from Toronto Station Bikeshare Data:
+Dashboard for Toronto Station Bikeshare Data (sample data):
 https://public.tableau.com/views/E2_16388590856170/FootfallCountoverStartTimeByWeekday?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
 
 ## Limitations
