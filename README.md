@@ -35,6 +35,10 @@ Visualizations created:
 ## Limitations
 
 ## Future Directions
+If more time and computing power is available, more sophisticated deep learning techniques can be implemented to identify additional features captured by the camera.
+
+An example use case would be retail development. Building a new shopping complex is an expensive investment and understanding the demographics in the area would be a key component to ensure maximum business success. Footfall Traffic analysis with AI computer vision can be used to determine the income level of the people walking pass the particular area by looking at the types of clothing, apparel worn by potential patrons to ascertain what kind of shops to have in the complex. 
+
 
 ## Dependencies
 
