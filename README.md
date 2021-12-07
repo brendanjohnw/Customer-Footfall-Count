@@ -14,9 +14,6 @@ shopping mall or retail store.
 
 **Alternative:** Use Toronto Station Bikeshare Data (sample data) as an example on how to visualize long term footfall count data
 
-Dashboard for mock data set:
-https://public.tableau.com/views/E1_16387797643930/CoordinatesbyFrame?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
-
 Dashboard for OpenCV data set:
 https://public.tableau.com/views/OpenCVData/CumulativeCountbySeconds?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
 
