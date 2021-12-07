@@ -8,7 +8,7 @@ shopping mall or retail store.
 
 
 ## Data Visualization using Tableau
-Initial plan: Use Tableau to visualize data set generated from OpenCV in a dashboard
+**Initial plan:** Use Tableau to visualize data set generated from OpenCV in a dashboard
 
 Dashboard for mock data set (OpenCV):
 https://public.tableau.com/views/E1_16387797643930/CoordinatesbyFrame?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
