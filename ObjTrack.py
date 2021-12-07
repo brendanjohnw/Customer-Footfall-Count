@@ -4,9 +4,20 @@ import matplotlib.pyplot as plt
 import tracker
 import time
 
+init_time = float(time.time())
+
+
 #Load Video Image
 video = cv2.VideoCapture('./video/crowd.mp4')
-
+def HOG_initial_count():
+    # capturing the first frame
+    hog = cv2.HOGDescriptor()
+    hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
+    _, first_frame = video.read()
+    frame_height = first_frame.shape[0]
+    frame_width = first_frame.shape[1]
+    (first_frame_region, _) = hog.detectMultiScale(first_frame, winStride=(3, 3), padding=(8, 8), scale=1.05)
+    return len(first_frame_region)
 codec = cv2.VideoWriter_fourcc(*'XVID')
 vid_fps =int(video.get(cv2.CAP_PROP_FPS))
 vid_width,vid_height = int(video.get(cv2.CAP_PROP_FRAME_WIDTH)), int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
@@ -31,92 +42,125 @@ net.setInputSwapRB(True)
 
 conf_threshold = 0.40
 nms_threshold = 0.40
+seconds = 0
+exact_seconds = 0
+seconds_person_counts = {}
+seconds_person_enter = {}
+seconds_person_exit = {}
 
+
+# Instantiating the tracker
 tracker = tracker.EuclideanDistTracker()
 
 pre_obj = {}
 down = int(0)
 up = int(0)
+total = int(0)
+init_time = time.localtime()
+total_counts = HOG_initial_count()
+try:
+    while True:
+        _, img = video.read()
 
-while True:
-    _, img = video.read()
+        if img is None:
+            print("Completed")
+            break
 
-    if img is None:
-        print("Completed")
-        break
-    
-    img_in = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    start_time = time.time()
-
-    # Model
-    class_ids, confidence, bounding_box = net.detect(img_in, conf_threshold, nms_threshold)
-
-    people_detections = []
-    for (classId, score, box) in zip(class_ids, confidence, bounding_box):
-        if int(classId) == 0:
-            x, y, w, h = box[0], box[1], box[2], box[3]
-            people_detections.append([x, y, w, h])
-
-    bounding_box_ids, coordinate_dict = tracker.update(people_detections)
-
-    height, width, _ = img.shape
-    cv2.line(img, (0, int(4*height/6+height/20)), (width, int(4*height/6+height/20)), (0, 255, 0), thickness=2)
-    cv2.line(img, (0, int(4*height/6-height/20)), (width, int(4*height/6-height/20)), (0, 255, 0), thickness=2)
-    
-    cmap = plt.get_cmap('tab20b')
-    colors = [cmap(i)[:3] for i in np.linspace(0,1,20)]
-
-    for bounding_box_id in bounding_box_ids:
-        x, y, w, h, id = bounding_box_id
-        centroid_location = (x + round(w / 2), y + round(h / 2))
-        centerY = y + round(h / 2)
-
-        color = colors[int(id) % len(colors)]
-        color = [i * 255 for i in color]
-
-        cv2.rectangle(img, (x, y), (x + w, y + h), color=color, thickness=2)
-
-        text = f"classID:{id}"
-
-        cv2.putText(img, text, (x, y - 5), cv2.FONT_HERSHEY_SIMPLEX, 1,
-                    color=color, thickness=2)
+        img_in = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        start_time = time.time()
 
 
-        if centerY <= (4*height/6+height/20) and centerY >= int(4*height/6-height/20):
-            if (len(pre_obj) == 0):
-                pre_obj[str(id)] = {
-                    "center_y": centerY,
-                    "Flags": False
-                }
-            
-            try:
-                pre_obj[str(id)]
+        # Model
+        class_ids, confidence, bounding_box = net.detect(img_in, conf_threshold, nms_threshold)
 
-                if pre_obj[str(id)]["center_y"] < centerY and pre_obj[str(id)]["Flags"] == False:
-                        down += 1
-                        pre_obj[str(id)]["Flags"] = True
-                elif pre_obj[str(id)]["center_y"] > centerY and pre_obj[str(id)]["Flags"] == False:
-                        up += 1
-                        pre_obj[str(id)]["Flags"] = True
+        people_detections = []
+        for (classId, score, box) in zip(class_ids, confidence, bounding_box):
+            if int(classId) == 0:
+                x, y, w, h = box[0], box[1], box[2], box[3]
+                people_detections.append([x, y, w, h])
 
-            except KeyError:
-                pre_obj[str(id)] = {
-                    "center_y": centerY,
-                    "Flags": False
-                }
+        bounding_box_ids, coordinate_dict = tracker.update(people_detections)
 
-    fps = 1./(time.time()-start_time)
-    cv2.putText(img, "FPS: {:.2f}".format(fps), (0,30), 0, 1, (0,0,255), 2)
-    cv2.putText(img, "Up: " + str(up), (0, 80), 0, 0.5, (0, 0, 255), 1)
-    cv2.putText(img, "Down: " + str(down), (0,130), 0, 0.5, (0,0,255), 1)
+        height, width, _ = img.shape
+        cv2.line(img, (0, int(4*height/6+height/20)), (width, int(4*height/6+height/20)), (0, 255, 0), thickness=2)
+        cv2.line(img, (0, int(4*height/6-height/20)), (width, int(4*height/6-height/20)), (0, 255, 0), thickness=2)
 
-    cv2.imshow("Video", img)
-    out.write(img)
+        cmap = plt.get_cmap('tab20b')
+        colors = [cmap(i)[:3] for i in np.linspace(0,1,20)]
 
-    if cv2.waitKey(25) & 0xFF == ord('q'):
-        exit()
+        for bounding_box_id in bounding_box_ids:
+            x, y, w, h, id = bounding_box_id
+            centroid_location = (x + round(w / 2), y + round(h / 2))
+            centerY = y + round(h / 2)
 
-video.release()
-out.release()
-cv2.destroyAllWindows()
+            color = colors[int(id) % len(colors)]
+            color = [i * 255 for i in color]
+
+            cv2.rectangle(img, (x, y), (x + w, y + h), color=color, thickness=2)
+
+            text = f"classID:{id}"
+
+            cv2.putText(img, text, (x, y - 5), cv2.FONT_HERSHEY_PLAIN, 1,
+                        color=color, thickness=2)
+
+
+
+            if centerY <= (4*height/6+height/20) and centerY >= int(4*height/6-height/20):
+                if (len(pre_obj) == 0):
+                    pre_obj[str(id)] = {
+                        "center_y": centerY,
+                        "Flags": False
+                    }
+
+                try:
+                    pre_obj[str(id)]
+
+                    if pre_obj[str(id)]["center_y"] < centerY and pre_obj[str(id)]["Flags"] == False:
+                            down += 1
+                            pre_obj[str(id)]["Flags"] = True
+                            total_counts -= 1
+                    elif pre_obj[str(id)]["center_y"] > centerY and pre_obj[str(id)]["Flags"] == False:
+                            up += 1
+                            pre_obj[str(id)]["Flags"] = True
+                            total_counts += 1
+
+
+
+                except KeyError:
+                    pre_obj[str(id)] = {
+                        "center_y": centerY,
+                        "Flags": False
+                    }
+
+        fps = 1. / (time.time() - start_time)
+        seconds = seconds + round(fps)
+        exact_seconds = round(seconds/16)
+        seconds_person_counts[exact_seconds] = total_counts
+
+        print(seconds_person_counts)
+
+
+
+        #print(seconds_person_enter)
+        cv2.putText(img, "FPS: {:.2f}".format(fps), (0,30), 0, 1, (0,0,255), 2)
+        cv2.putText(img, "People Entering: " + str(up), (0, 60), 0, 0.5, (0, 0, 255), 1)
+        cv2.putText(img, "People Exiting: " + str(down), (0,90), 0, 0.5, (0,0,255), 1)
+        cv2.putText(img, "Total People in premise: " + str(total_counts),(0, 120), 0, 0.5, (0,0,255), 1)
+
+        cv2.imshow("Video", img)
+        out.write(img)
+
+        if cv2.waitKey(25) & 0xFF == ord('q'):
+            exit()
+except:
+    import csv
+    data = seconds_person_counts.items()
+
+    with open('seconds_and_counts.csv', 'w') as out:
+        csv_out = csv.writer(out)
+        csv_out.writerow(['Second', 'Cumulative Count'])
+        for row in data:
+            csv_out.writerow(row)
+    video.release()
+    cv2.destroyAllWindows()
 
