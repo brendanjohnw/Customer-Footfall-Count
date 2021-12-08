@@ -55,6 +55,14 @@ Visualizations created:
 - Hourly net difference (beginning vs. end of week)
 - Daily trend
 
+Findings:
+- Day with highest number of entries and exits: Friday
+- Weekdays have higher entries and exits than weekends
+- Common enter and exit times
+--> Weekdays: 8am - 6pm
+--> Weekends: 10am - 6pm
+- Influx of visitor entries around 12pm - 3pm
+
 ## Limitations
 Object tracking is not effiecient
 
