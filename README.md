@@ -58,9 +58,7 @@ Visualizations created:
 Findings:
 - Day with highest number of entries and exits: Friday
 - Weekdays have higher entries and exits than weekends
-- Common enter and exit times
-Weekdays: 8am - 6pm
-Weekends: 10am - 6pm
+- Common enter and exit times are 8am - 6pm on Weekdays and 10am - 6pm on Weekends
 - Influx of visitor entries around 12pm - 3pm
 
 ## Limitations
