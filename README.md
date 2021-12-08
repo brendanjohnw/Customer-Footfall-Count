@@ -61,6 +61,17 @@ Findings:
 - Common enter and exit times are 8am - 6pm on Weekdays and 10am - 6pm on Weekends
 - Influx of visitor entries around 12pm - 3pm
 
+Examples of Application in Sunway Group Malls MAnagement:
+
+**Visitor footfall Analytics**
+- Identify average time visitors spend in the mall
+- Identify sales conversion rates relative to total number of visitors
+- Assign mall staff based on _specific days of the week and times_ identified to increase efficiency
+
+**Zone Analytics**
+- Identify which areas' entries and exits have higher footfall, and adjust tenants' rate accordingly
+- Visualize common routes taken by visitors to optimize advertisement and outlet placement
+
 ## Limitations
 Object tracking is not effiecient
 
