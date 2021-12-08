@@ -53,7 +53,7 @@ https://public.tableau.com/views/PedestrianFootfallIndexinDublinCityCentre/Dashb
 Visualizations created:
 - Hourly footfall trend (grouped by days of the week)
 - Hourly net difference trend (grouped by days of the week)
-- Daily trend (grouped by date)
+- Daily trend
 
 ## Limitations
 Object tracking is not effiecient
