@@ -66,7 +66,7 @@ Findings:
 **Visitor Footfall Analytics**
 - Identify average time visitors spend in the mall
 - Identify sales conversion rates relative to total number of visitors
-- Assign mall staff based on _specific days of the week and times_ identified to increase efficiency
+- Identify _specific days of the week and times_ with higher visitor footfall to plan allocation of mall staff
 
 **Zone Analytics**
 - Identify which areas' entries and exits have higher footfall, and adjust tenants' rate accordingly
