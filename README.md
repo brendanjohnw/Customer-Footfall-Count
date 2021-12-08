@@ -61,7 +61,7 @@ Findings:
 - Common enter and exit times are 8am - 6pm on Weekdays and 10am - 6pm on Weekends
 - Influx of visitor entries around 12pm - 3pm
 
-Examples of Application in Sunway Group Malls MAnagement:
+**Examples of Application in Sunway Group Malls Management:**
 
 **Visitor footfall Analytics**
 - Identify average time visitors spend in the mall
@@ -83,7 +83,7 @@ An example use case would be retail development. Building a new shopping complex
 
 ## Dependencies
 
-OpenCV:https://docs.opencv.org/4.x/d4/db1/tutorial_documentation.html
+OpenCV: https://docs.opencv.org/4.x/d4/db1/tutorial_documentation.html
 
 Numpy: https://numpy.org/doc/stable/
 
