@@ -15,13 +15,17 @@ shopping mall or retail store.
 ## Tech
 ***Object Detection*** <br />
 
- - The initial estimation of the total patrons in the area were counted using the Histogram of Gradients (HOG) detection algorithm for accurate detection of people in the first frame of the video. We initially planned to use HOG and explored the use of the Mask-RCNN detection for application throughout the video, but its reliance on GPU lead to poor performance on our devices. Hence, the in-built DNN in OpenCV with YoloV4 weights for detection showed much better performance.
+ - The initial estimation of the total patrons in the area were counted using the Histogram of Gradients (HOG) detection algorithm for accurate detection of people in the first 
+frame of the video. We initially planned to use HOG and explored the use of the Mask-RCNN detection for application throughout the video, but its reliance on GPU lead to poor performance on our devices. Hence, the in-built DNN in OpenCV with YoloV4 weights for detection showed much better performance.
 
 ***Object Tracking*** <br />
-For object trackng we implement centroid tracking algorithms.
+
+- For object trackng we implement centroid tracking algorithms.
 For this algorithms is that we passing in a list of bounding box (x,y)-cordinates for each object detected with our object detection model.
 Then we compute Eudclidean distance between new bonding and existing objects
 After that we assume the object will move in between subsequent frames. Thus, we choose to assign the centroid with minimum distance bewteen objects
+
+<img width="1267" alt="Screenshot 2021-12-08 at 2 44 17 PM" src="https://user-images.githubusercontent.com/79955754/145162429-ecadab6f-9314-410f-9fb7-aabac23405d5.png">
 
 Disadvatage:-
 - When the person loss detection it will start assign with new ids which will effect the counting
