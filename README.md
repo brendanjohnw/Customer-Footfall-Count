@@ -39,7 +39,7 @@ We set a line around 3/4 heights then we store the object detected in a dictiona
 
 **Problem encountered:** Video is too short, little can be predicted based on raw coordinates of all people per frame.
 
-**Alternative:** Use Toronto Station Bikeshare Data (sample data) as an example on how to visualize long term footfall count data
+**Alternative:** Use Pedestrian Footfall Index in Dublin City Centre (sample data) as an example on how to visualize long term footfall count data
 
 Dashboard for OpenCV data set:
 https://public.tableau.com/views/OpenCVData/CumulativeCountbySeconds?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
