@@ -9,7 +9,7 @@ The main application of the project was to count the in-rate and out-rate of peo
 ## Features
 - Detect people in the video footage
 - Tracking the people and asign with random ids
-- Count the number of people entring or exiting by analyze the people moving up or down
+- Count the number of people entering or exiting by analyze the people moving up or down
 
 ## Tech
 ***Object Detection*** <br />
