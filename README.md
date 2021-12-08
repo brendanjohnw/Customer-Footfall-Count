@@ -73,6 +73,10 @@ Matplotlib: https://matplotlib.org/stable/api/index
 
 YoloV4: https://github.com/pjreddie/darknet
 
+To install Yolov4.weights, copy and paste the following into the command line:
+
+!wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights
+
 # References
 
 Pedestrian Footfall Index in Dublin City Centre (sample data): https://data.world/ie-dublin-city-bus/952a55ab-f222-4249-8086-7bf9fdeba723
