@@ -63,7 +63,7 @@ Findings:
 
 **Examples of Application in Sunway Group Malls Management:**
 
-**Visitor footfall Analytics**
+**Visitor Footfall Analytics**
 - Identify average time visitors spend in the mall
 - Identify sales conversion rates relative to total number of visitors
 - Assign mall staff based on _specific days of the week and times_ identified to increase efficiency
