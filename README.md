@@ -18,11 +18,11 @@ The following program makes use of 2 types of detection algorithms
 - Count the number of people entring or exiting by analyze the people moving up or down
 
 ## Tech
-***Object Detection*** --
+***Object Detection*** <br />
 We apply YOLOv4 (You Only Look Once) object detection algorithm using Python and OpenCV.
 There is also other object detection algorithm outside example Mask-RCNN and the advatages of YOLO compare to other its work very fast and accuracy which doesn't required much GPU processing power.
 
-***Object Tracking*** --
+***Object Tracking*** <br />
 For object trackng we implement centroid tracking algorithms.
 For this algorithms is that we passing in a list of bounding box (x,y)-cordinates for each object detected with our object detection model.
 Then we compute Eudclidean distance between new bonding and existing objects
@@ -31,7 +31,7 @@ After that we assume the object will move in between subsequent frames. Thus, we
 Disadvatage:-
 - When the person loss detection it will start assign with new ids which will effect the counting
 
-***Count People*** --
+***Count People*** <br />
 We set a line around 3/4 heights then we store the object detected in a dictionary then if the object passed the line. We load the initial Y-Centroid to compare with current frame and determine the person is moving up or down
 
 ## Data Visualization using Tableau (Kong Yuki)
