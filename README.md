@@ -7,8 +7,8 @@ The main application of the project was to count the in-rate and out-rate of peo
 
 
 ## Features
-- Detect people in the video footage
-- Tracking the people and asign with random ids
+- Detect people from a live camera feed or a video in MPEG-4.
+- Tracking people and assigning with random IDs.
 - Count the number of people entering or exiting by analyze the people moving up or down
 
 ## Tech
@@ -21,22 +21,20 @@ frame of the video. We initially planned to use HOG and explored the use of the 
 
 - For object trackng we implement centroid tracking algorithms.
 For this algorithms is that we passing in a list of bounding box (x,y)-cordinates for each object detected with our object detection model.
-Then we compute Eudclidean distance between new bonding and existing objects
+Then we compute euclidean distance between new bonding and existing objects
 After that we assume the object will move in between subsequent frames. Thus, we choose to assign the centroid with minimum distance bewteen objects
+
+***Count People*** <br />
+We set a line around 3/4 heights then we store the object detected in a dictionary then if the object passed the line. We load the initial Y-Centroid to compare with current frame and determine the person is moving up or down
 
 <img width="1267" alt="Screenshot 2021-12-08 at 2 44 17 PM" src="https://user-images.githubusercontent.com/79955754/145162429-ecadab6f-9314-410f-9fb7-aabac23405d5.png">
 
 Screenshot of the counter in action
 
-
-
-***Count People*** <br />
-We set a line around 3/4 heights then we store the object detected in a dictionary then if the object passed the line. We load the initial Y-Centroid to compare with current frame and determine the person is moving up or down
-
-## Data Visualization using Tableau (Kong Yuki)
+## Data Visualization with Tableau (Kong Yuki)
 **Initial plan:** Use Tableau to visualize data set generated from OpenCV in a dashboard
 
-**Problem encountered:** Video is too short, little can be predicted based on raw coordinates of all people per frame.
+**Problems encountered:** Video is too short, little can be predicted based on raw coordinates of all people per frame.
 
 **Alternative:** Use Pedestrian Footfall Index in Dublin City Centre (sample data) as an example on how to visualize long term footfall count data
 
@@ -72,12 +70,12 @@ Findings:
 - Identify which areas' entries and exits have higher footfall, and adjust tenants' rate accordingly
 - Visualize common routes taken by visitors to optimize advertisement and outlet placement
 
-## Limitations
+## Known Issues
 - Object tracking is not efficient
-- When the person loss detection it will start assign with new ids which will effect the counting
+- When the detection algorithm fails to detect a person, the person will be assigned a new ID and the counting would be affected
 
 ## Future Directions
-If more time and computing power is available, more sophisticated deep learning techniques can be implemented to identify additional features captured by the camera.
+If more time and computing power is available, more sophisticated deep learning techniques can be applied to identify additional features of the environment captured by the camera.
 
 An example use case would be retail development. Building a new shopping complex is an expensive investment and understanding the demographics in the area would be a key component to ensure maximum business success. Footfall Traffic analysis with AI computer vision can be used to determine the income level of the people walking pass the particular area by looking at the types of clothing, apparel worn by potential patrons to ascertain what kind of shops to have in the complex. 
 
@@ -91,6 +89,8 @@ Numpy: https://numpy.org/doc/stable/
 Matplotlib: https://matplotlib.org/stable/api/index
 
 YoloV4: https://github.com/pjreddie/darknet
+
+## Installing YoloV4 weights
 
 To install Yolov4.weights, copy and paste the following into the command line:
 
