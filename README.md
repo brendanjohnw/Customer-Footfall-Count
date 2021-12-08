@@ -3,8 +3,7 @@
 The following project is a computer vision customer footfall counter that utilizes OpenCV for object tracking and detection. 
 The detectiion mechanism was supplemented by pre-trained YoloV4 datasets, which were adapted from Common Objects in Common (COCO).
 
-The main application of the project was to count the in-rate and out-rate of people enterring a particular premise such as a train station
-shopping mall or retail store.
+The main application of the project was to count the in-rate and out-rate of people enterring a particular premise such as a shopping mall or retail store.
 
 
 ## Features
