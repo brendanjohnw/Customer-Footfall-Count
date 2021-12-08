@@ -28,8 +28,7 @@ After that we assume the object will move in between subsequent frames. Thus, we
 
 Screenshot of the counter in action
 
-Disadvatage:-
-- When the person loss detection it will start assign with new ids which will effect the counting
+
 
 ***Count People*** <br />
 We set a line around 3/4 heights then we store the object detected in a dictionary then if the object passed the line. We load the initial Y-Centroid to compare with current frame and determine the person is moving up or down
@@ -74,7 +73,8 @@ Findings:
 - Visualize common routes taken by visitors to optimize advertisement and outlet placement
 
 ## Limitations
-Object tracking is not efficient
+- Object tracking is not efficient
+- When the person loss detection it will start assign with new ids which will effect the counting
 
 ## Future Directions
 If more time and computing power is available, more sophisticated deep learning techniques can be implemented to identify additional features captured by the camera.
