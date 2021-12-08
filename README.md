@@ -73,7 +73,7 @@ Findings:
 - Visualize common routes taken by visitors to optimize advertisement and outlet placement
 
 ## Limitations
-Object tracking is not effiecient
+Object tracking is not efficient
 
 ## Future Directions
 If more time and computing power is available, more sophisticated deep learning techniques can be implemented to identify additional features captured by the camera.
