@@ -26,6 +26,8 @@ After that we assume the object will move in between subsequent frames. Thus, we
 
 <img width="1267" alt="Screenshot 2021-12-08 at 2 44 17 PM" src="https://user-images.githubusercontent.com/79955754/145162429-ecadab6f-9314-410f-9fb7-aabac23405d5.png">
 
+Screenshot of the counter in action
+
 Disadvatage:-
 - When the person loss detection it will start assign with new ids which will effect the counting
 
