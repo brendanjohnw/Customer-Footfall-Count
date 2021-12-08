@@ -47,14 +47,13 @@ https://public.tableau.com/views/OpenCVData/CumulativeCountbySeconds?:language=e
 Visualizations created:
 - Cumulative Count by Seconds
 
-Dashboard for Toronto Station Bikeshare Data (sample data):
-https://public.tableau.com/views/TorontoStationBikeshareData/HourlyTrend?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
+Dashboard for Pedestrian Footfall Index in Dublin City Centre (sample data):
+https://public.tableau.com/views/PedestrianFootfallIndexinDublinCityCentre/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
 
 Visualizations created:
 - Hourly footfall trend (grouped by days of the week)
-- Daily footfall trend (grouped by week number, 1- 13 (Q1 of 2018))
-- Weekly footfall trend
-- Monthly footfall trend
+- Hourly net difference trend (grouped by days of the week)
+- Daily trend (grouped by date)
 
 ## Limitations
 Object tracking is not effiecient
@@ -77,7 +76,7 @@ YoloV4: https://github.com/pjreddie/darknet
 
 # References
 
-Toronto Station Bikeshare Data (sample data): https://www.kaggle.com/apexinsideapex/station-footfall-analysis/data
+Pedestrian Footfall Index in Dublin City Centre (sample data): https://data.world/ie-dublin-city-bus/952a55ab-f222-4249-8086-7bf9fdeba723
 
 PyImageSearch People tracker and counter: https://www.pyimagesearch.com/2018/08/13/opencv-people-counter/
 
