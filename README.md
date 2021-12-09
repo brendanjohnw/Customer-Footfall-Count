@@ -42,7 +42,7 @@ Dashboard for OpenCV data set:
 https://public.tableau.com/views/OpenCVData/CumulativeCountbySeconds?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
 
 Visualizations created:
-- Cumulative Count by Seconds
+- Cumulative Count by Frames
 
 Dashboard for Pedestrian Footfall Index in Dublin City Centre (sample data):
 https://public.tableau.com/views/PedestrianFootfallIndexinDublinCityCentre/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
