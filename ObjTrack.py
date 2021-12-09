@@ -6,18 +6,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import tracker
 import time
-
-
-
 #Load Video Image
 video = cv2.VideoCapture('./video/crowd.mp4')
-def HOG_initial_count():
-    # capturing the first frame
-    hog = cv2.HOGDescriptor()
-    hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
-    _, first_frame = video.read()
-    (first_frame_region, _) = hog.detectMultiScale(first_frame, winStride=(3, 3), padding=(8, 8), scale=1.05)
-    return len(first_frame_region)
+
 codec = cv2.VideoWriter_fourcc(*'XVID')
 vid_fps =int(video.get(cv2.CAP_PROP_FPS))
 vid_width,vid_height = int(video.get(cv2.CAP_PROP_FRAME_WIDTH)), int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
@@ -48,24 +39,33 @@ init_time = 0
 total_frames = 0
 total_fps = 0
 
+pre_obj = {}
+down = int(0)
+up = int(0)
+total = int(0)
+init_time = time.time()
+
+
 seconds_person_counts = {}
 seconds_person_enter = {}
 seconds_person_exit = {}
-
-
 # Instantiating the tracker
 tracker = tracker.EuclideanDistTracker()
+
+def HOG_initial_count():
+    # capturing the first frame
+    hog = cv2.HOGDescriptor()
+    hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
+    _, first_frame = video.read()
+    (first_frame_region, _) = hog.detectMultiScale(first_frame, winStride=(3, 3), padding=(8, 8), scale=1.05)
+    return len(first_frame_region)
 
 # For generating approximated data
 def time_estimator(average):
     runtime_seconds = time.time() - init_time
     return math.floor(int(runtime_seconds) / average)
 
-pre_obj = {}
-down = int(0)
-up = int(0)
-total = int(0)
-init_time = time.time()
+
 total_counts = HOG_initial_count()
 try:
     while True:
