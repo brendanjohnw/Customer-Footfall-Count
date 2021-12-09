@@ -31,7 +31,7 @@ We set a line around 3/4 heights then we store the object detected in a dictiona
 
 Screenshot of the counter in action
 
-## Data Visualization with Tableau (Kong Yuki)
+## Data Analysis (Kong Yuki)
 **Initial plan:** Use Tableau to visualize data set generated from OpenCV in a dashboard
 
 **Problems encountered:** Video is too short, little can be predicted based on raw coordinates of all people per frame.
