@@ -1,5 +1,5 @@
 # OpenCV Footfall Counter 
-## A Customer Footfall Count Project. (Brendan Lee and Seak Jian De)
+## Object Tracking and Detection (Brendan Lee and Seak Jian De)
 The following project is a computer vision customer footfall counter that utilizes OpenCV for object tracking and detection. 
 The detectiion mechanism was supplemented by pre-trained YoloV4 datasets, which were adapted from Common Objects in Common (COCO).
 
