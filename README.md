@@ -103,3 +103,7 @@ Pedestrian Footfall Index in Dublin City Centre (sample data): https://data.worl
 PyImageSearch People tracker and counter: https://www.pyimagesearch.com/2018/08/13/opencv-people-counter/
 
 Non-Maxima suppression: https://learnopencv.com/non-maximum-suppression-theory-and-implementation-in-pytorch/
+
+Histogram of Gradients: https://learnopencv.com/histogram-of-oriented-gradients/
+
+Mask R-CNN Object Detection: https://github.com/matterport/Mask_RCNN
