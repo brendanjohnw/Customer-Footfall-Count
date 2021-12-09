@@ -9,19 +9,19 @@ The main application of the project was to count the in-rate and out-rate of peo
 ## Features
 - Detect people from a live camera feed or a video in MPEG-4.
 - Tracking people and assigning with random IDs.
-- Count the number of people entering or exiting by analyze the people moving up or down
+- Count the number of people entering or exiting by analyzing the people moving up or down
 
 ## Tech
 ***Object Detection*** <br />
 
- - The initial estimation of the total patrons in the area were counted using the Histogram of Gradients (HOG) detection algorithm for accurate detection of people in the first 
+The initial estimation of the total patrons in the area were counted using the Histogram of Gradients (HOG) detection algorithm for accurate detection of people in the first 
 frame of the video. We initially planned to use HOG and explored the use of the Mask-RCNN detection for application throughout the video, but its reliance on GPU lead to poor performance on our devices. Hence, the in-built DNN in OpenCV with YoloV4 weights for detection showed much better performance.
 
 ***Object Tracking*** <br />
 
-- For object trackng we implement centroid tracking algorithms.
+For object trackng we implement centroid tracking algorithms.
 For this algorithms is that we passing in a list of bounding box (x,y)-cordinates for each object detected with our object detection model.
-Then we compute euclidean distance between new bonding and existing objects
+Then we compute euclidean distance between new bounding boxes and existing objects
 After that we assume the object will move in between subsequent frames. Thus, we choose to assign the centroid with minimum distance bewteen objects
 
 ***Count People*** <br />
