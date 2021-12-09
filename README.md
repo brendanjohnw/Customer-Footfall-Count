@@ -96,11 +96,15 @@ pip install -r requirements.txt
 
 in your shell.
 
-## Installing YoloV4 weights
-
-To install Yolov4.weights, copy and paste the following into the command line:
+## Installation
+1. clone github repository
+2. Install dependencies with pip install -r requirements.txt
+3. open ObjTrack.py and change the path to your video
+4. To install Yolov4.weights, copy and paste the following into the command line:
 
 !wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights
+
+5. Run ObjTrack.py. 
 
 # References
 
