@@ -39,10 +39,10 @@ Screenshot of the counter in action
 **Alternative:** Use Pedestrian Footfall Index in Dublin City Centre (sample data) as an example on how to visualize long term footfall count data
 
 Dashboard for OpenCV data set:
-https://public.tableau.com/views/OpenCVData/CumulativeCountbySeconds?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
+https://public.tableau.com/views/OpenCVSecondsandCounts/CumulativeCountbySeconds?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
 
 Visualizations created:
-- Cumulative Count by Frames
+- Cumulative Count by Seconds
 
 Dashboard for Pedestrian Footfall Index in Dublin City Centre (sample data):
 https://public.tableau.com/views/PedestrianFootfallIndexinDublinCityCentre/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
