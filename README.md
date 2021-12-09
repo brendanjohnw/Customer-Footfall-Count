@@ -34,7 +34,7 @@ Screenshot of the counter in action
 ## Data Analysis (Kong Yuki)
 **Initial plan:** Use Tableau to visualize data set generated from OpenCV in a dashboard
 
-**Problems encountered:** Video is too short, little can be analyzed based on raw coordinates of all people per second.
+**Problems encountered:** Video is too short, little can be analyzed based on raw counts of people per second.
 
 **Alternative:** Use Pedestrian Footfall Index in Dublin City Centre (sample data) as an example on how to visualize and analyze long term footfall count data
 
