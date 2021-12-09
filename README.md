@@ -90,6 +90,12 @@ Matplotlib: https://matplotlib.org/stable/api/index
 
 YoloV4: https://github.com/pjreddie/darknet
 
+Install dependencies with 
+
+pip install -r requirements.txt
+
+in your shell.
+
 ## Installing YoloV4 weights
 
 To install Yolov4.weights, copy and paste the following into the command line:
