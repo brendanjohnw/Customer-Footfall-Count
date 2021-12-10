@@ -105,7 +105,7 @@ in your shell.
 3. open ObjTrack.py and change the path to your video
 4. To install Yolov4.weights, copy and paste the following into the command line:
 
-!wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights
+```!wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights```
 
 5. Run ObjTrack.py. 
 
