@@ -92,7 +92,10 @@ YoloV4: https://github.com/pjreddie/darknet
 
 Install dependencies with 
 
-pip install -r requirements.txt
+```
+  pip install -r requirements.txt
+
+```
 
 in your shell.
 
