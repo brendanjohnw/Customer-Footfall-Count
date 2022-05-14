@@ -22,7 +22,7 @@ frame of the video. We initially planned to use HOG and explored the use of the 
 For object trackng we implement centroid tracking algorithms.
 For this algorithms is that we passing in a list of bounding box (x,y)-cordinates for each object detected with our object detection model.
 Then we compute euclidean distance between new bounding boxes and existing objects
-After that we assume the object will move in between subsequent frames. Thus, we choose to assign the centroid with minimum distance bewteen objects
+After that we assume the object will move in between subsequent frames. Thus, we choose to assign the centroid with minimum distance between objects
 
 ***Count People*** <br />
 We set a line around 3/4 heights then we store the object detected in a dictionary then if the object passed the line. We load the initial Y-Centroid to compare with current frame and determine the person is moving up or down
