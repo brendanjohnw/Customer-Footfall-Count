@@ -1,6 +1,6 @@
 import math
 
-
+# Calculates the Euclidean distance between entities on the screen, specifically to group entities as one object based on some marginal error
 class EuclideanDistTracker:
     def __init__(self):
         # Store the center positions of the objects
